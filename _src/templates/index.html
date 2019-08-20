@@ -10,27 +10,21 @@
     <header class="header">
       <h1 class="header_title">El juego de las parejas</h1>
       <form action="" class="header_form">
-        <div class="header_form--option">
-          <label for="4">
-            <input id="header_form--option--four" type="radio" value="4" name="number--cards" />
-            4
-          </label>
-        </div>
-        <div class="header_form--option">
-          <label for="6">
-            <input id="header_form--option--six" type="radio" value="6" name="number--cards" />
-            6
-          </label>
-        </div>
-        <div class="header_form--option">
-          <label for="8">
-            <input id="header_form--option--eight" type="radio" value="8" name="number--cards" />
-            8
-          </label>
-        </div>
+        <input class="header_form--option four" type="radio" value="4" name="number--cards" checked />
+        <label for="4">4</label>
+
+        <input class="header_form--option six" type="radio" value="6" name="number--cards" />
+        <label for="6">6</label>
+
+        <input class="header_form--option eight" type="radio" value="8" name="number--cards" />
+        <label for="8">8</label>
+
         <button class="header_form--btn">Comenzar</button>
       </form>
     </header>
+    <main class="cards_container">
+      <ul class="cards__container--list"></ul>
+    </main>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

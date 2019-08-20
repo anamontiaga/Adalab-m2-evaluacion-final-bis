@@ -10,9 +10,11 @@
   &_form {
     display: flex;
     flex-direction: row;
+    justify-items: center;
     justify-content: center;
+    align-items: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
     &--btn {
       border-radius: 5px;
       font-weight: bold;
@@ -22,15 +24,9 @@
     &--option {
       margin-left: 15px;
       font-family: 14px;
+      font-size: 16px;
+      height: 20px;
+      width: 20px;
     }
-  }
-}
-#header_form--option {
-  font-size: 16px;
-  &--four,
-  &--six,
-  &--eight {
-    height: 20px;
-    width: 20px;
   }
 }
