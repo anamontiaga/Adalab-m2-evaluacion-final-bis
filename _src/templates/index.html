@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Adalab Web Starter Kit</title>
-  <link rel="icon" href="favicon.png"/>
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-  <div class="page">
-    <partial src="_header.html" label="Header"></partial>
-    <partial src="_main.html" label="Main"></partial>
-    <partial src="_link.html" aClass="link__adalab" text="Adalab" url="https://adalab.es"></partial>
-    <partial src="_link.html" aClass="link__github" text="GitHub" url="https://github.com"></partial>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Evaluación Final BIS :: Ana Montiaga</title>
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header_title">El juego de las parejas</h1>
+      <form action="" class="header_form">
+        <div class="header_form--option">
+          <label for="4">
+            <input id="header_form--option--four" type="radio" value="4" name="number--cards" />
+            4
+          </label>
+        </div>
+        <div class="header_form--option">
+          <label for="6">
+            <input id="header_form--option--six" type="radio" value="6" name="number--cards" />
+            6
+          </label>
+        </div>
+        <div class="header_form--option">
+          <label for="8">
+            <input id="header_form--option--eight" type="radio" value="8" name="number--cards" />
+            8
+          </label>
+        </div>
+        <button class="header_form--btn">Comenzar</button>
+      </form>
+    </header>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
