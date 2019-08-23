@@ -30,3 +30,15 @@
     }
   }
 }
+
+.cards_container {
+  &--list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    &--image {
+      height: 195px;
+      width: 160px;
+    }
+  }
+}
