@@ -2,9 +2,10 @@
 
 .header {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 70px;
   &_title {
-    font-size: 40px;
+    font-size: 50px;
+    font-family: "Noto Sans TC", sans-serif;
     margin-bottom: 50px;
   }
   &_form {
@@ -32,6 +33,9 @@
 }
 
 .cards_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
   &--list {
     list-style: none;
     display: flex;
@@ -39,6 +43,20 @@
     &--image {
       height: 195px;
       width: 160px;
+      border: 1px solid rgb(0, 128, 122);
+      border-radius: 10px;
+      margin: 10px;
+      &--adalab {
+        height: 195px;
+        width: 160px;
+        border: 1px solid rgb(0, 128, 122);
+        border-radius: 10px;
+        margin: 10px;
+      }
     }
   }
+}
+
+.hidden {
+  display: none;
 }

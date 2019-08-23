@@ -9,9 +9,12 @@ let btnValue;
 
 let cardsArray = [];
 
+function setLocalStorage() {
+  localStorage.setItem("number of cards", JSON.stringify(btnValue));
+}
+
 // Buscamos las cartas llamando a la API
-function getCardInfo(ev) {
-  ev.preventDefault();
+function getCardInfo() {
   for (const cardBtn of cardsBtns) {
     if (cardBtn.checked === true) {
       btnValue = cardBtn.value;
@@ -19,16 +22,36 @@ function getCardInfo(ev) {
     fetch(`${api}${btnValue}.json`)
       .then(response => response.json())
       .then(data => {
-        cardsList.innerHTML = ""; // te lo pinta en blanco y no me repite las búsquedas y refresca
-        for (let i = 0; i < data.length; i++) {
-          cardsList.innerHTML += `<li class="cards_container--list--item">
-        <img src="${data[i].image}" alt="${data[i].image}" class="cards_container--list--image">
-        <img src="${cardAdalab}" alt="Adalab" class="cards_container--list--image--adalab"></li>`;
-        }
         cardsArray = data;
-        localStorage.setItem("number of cards", btnValue); // guardo en Local Storage
+        setLocalStorage();
       });
   }
 }
 
-searchBtn.addEventListener("click", getCardInfo);
+function paintCards(ev) {
+  ev.preventDefault();
+  getCardInfo();
+  cardsList.innerHTML = ""; // te lo pinta en blanco y no me repite las búsquedas y refresca
+  for (let i = 0; i < cardsArray.length; i++) {
+    cardsList.innerHTML += `<li class="cards_container--list--item">
+        <img src="${cardsArray[i].image}" alt="${cardsArray[i].image}" class="cards_container--list--image hidden">
+        <img src="${cardAdalab}" alt="Adalab" class="cards_container--list--image--adalab"></li>`;
+  }
+
+  const cardsItems = document.querySelectorAll(".cards_container--list--item");
+  for (const item of cardsItems) {
+    item.addEventListener("click", flipCards);
+  }
+  // 1º por qué esto no me funciona fueraaaa
+}
+
+searchBtn.addEventListener("click", paintCards);
+
+// 2º tengo que dar dos veces al botón para que me pinte las cartas
+
+function flipCards(event) {
+  const cardGame = event.currentTarget.querySelector(".cards_container--list--image");
+  const cardDefault = event.currentTarget.querySelector(".cards_container--list--image--adalab");
+  cardGame.classList.toggle("hidden");
+  cardDefault.classList.toggle("hidden");
+}
