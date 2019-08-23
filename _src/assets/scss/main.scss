@@ -43,13 +43,14 @@
     &--image {
       height: 195px;
       width: 160px;
-      border: 1px solid rgb(0, 128, 122);
+      border: 3px solid rgb(0, 128, 122);
+      background-color: aquamarine;
       border-radius: 10px;
       margin: 10px;
       &--adalab {
         height: 195px;
         width: 160px;
-        border: 1px solid rgb(0, 128, 122);
+        border: 3px solid rgb(0, 128, 122);
         border-radius: 10px;
         margin: 10px;
       }

@@ -37,12 +37,11 @@ function paintCards(ev) {
         <img src="${cardsArray[i].image}" alt="${cardsArray[i].image}" class="cards_container--list--image hidden">
         <img src="${cardAdalab}" alt="Adalab" class="cards_container--list--image--adalab"></li>`;
   }
-
   const cardsItems = document.querySelectorAll(".cards_container--list--item");
   for (const item of cardsItems) {
     item.addEventListener("click", flipCards);
   }
-  // 1º por qué esto no me funciona fueraaaa
+  // 1º ¿Por qué flipCards no se ejecuta con el addEventListener abajo de la función?
 }
 
 searchBtn.addEventListener("click", paintCards);
@@ -55,3 +54,13 @@ function flipCards(event) {
   cardGame.classList.toggle("hidden");
   cardDefault.classList.toggle("hidden");
 }
+
+function catchData() {
+  const catchInfo = JSON.parse(localStorage.getItem("number of cards"));
+  if (catchInfo !== null) {
+    cardsArray = catchInfo;
+    paintCards();
+  }
+}
+
+catchData();
